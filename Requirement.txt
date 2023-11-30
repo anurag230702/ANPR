@@ -1,6 +1,10 @@
-Required python libraries for this project
+# Required python libraries for this project
 import cv2
 import pytesseract
 from flask
 import numpy
 python environment = 3.9.13
+
+#pytesseract.exe file is to be downloaded according to your needs and set it to the specific location in your pc
+The following is the path where I have save the pytsseract.exe file:- 
+C:\Users\Hp\anaconda3\Scripts\pytesseract.exe
