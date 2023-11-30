@@ -1,0 +1,6 @@
+Required python libraries for this project
+import cv2
+import pytesseract
+from flask
+import numpy
+python environment = 3.9.13
