@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Video</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(45deg, #141e30, #243b55);
+        }
+        .upload-container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: #ffa500;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input[type="file"] {
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            box-shadow: 2px 2px 5px rgba(103, 66, 66, 0.1);
+        }
+        input[type="submit"] {
+            padding: 12px 30px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #3498db;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            outline: none;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="upload-container">
+        <h1>Automatic Number Plate Recognition System</h1>
+        <br>
+        <br>
+        <h3>Upload a Video</h3>
+        <form action="/upload_video" method="post" enctype="multipart/form-data">
+            <input type="file" name="video" accept=".mp4, .avi, .mkv">
+            <input type="submit" value="Upload">
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>License Plate Detection Result</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(45deg, #141e30, #243b55);
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            color: #ccc;
+            margin-top: 30px;
+            font-size: 36px;
+            text-align: center;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            width: 100%;
+            max-width: 800px;
+        }
+        li {
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            padding: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        li:hover {
+            transform: translateY(-5px);
+        }
+        p {
+            margin: 5px 0;
+        }
+        video {
+            width: 100%;
+            max-width: 800px;
+            display: block;
+            margin: 20px auto;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <video width="640" height="480" controls>
+        <source src="{{ video_path }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <h1>Detected License Plate Information</h1>
+    {% if detected_plates %}
+        <ul>
+            {% for plate_info in detected_plates %}
+                <li>
+                    <p><strong>Plate:</strong> {{ plate_info['Plate'] }}</p>
+                    <p><strong>Confidence:</strong> {{ plate_info['Confidence'] }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No license plates detected.</p>
+    {% endif %}
+</body>
+</html>
